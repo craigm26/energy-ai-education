@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/craigm26/energy-ai-education/standards/eadx/schemas/observations.json",
+  "title": "EA-DX Observations Table Schema",
+  "description": "Canonical schema for energy time-series measurements in EA-DX Package v0.1.",
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "array",
+      "items": [
+        {
+          "name": "ts",
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp in ISO 8601 format with UTC offset (e.g. 2024-06-15T14:00:00-07:00). Required.",
+          "constraints": {"required": true}
+        },
+        {
+          "name": "tz",
+          "type": "string",
+          "description": "IANA timezone database name (e.g. America/Los_Angeles). Optional if ts includes offset.",
+          "constraints": {"required": false}
+        },
+        {
+          "name": "entity_type",
+          "type": "string",
+          "description": "Type of entity being measured.",
+          "constraints": {
+            "required": true,
+            "enum": ["meter", "inverter", "feeder", "plant", "market_node", "building", "ev_charger", "battery", "other"]
+          }
+        },
+        {
+          "name": "entity_id",
+          "type": "string",
+          "description": "Stable opaque identifier for the entity. Must not be a real customer ID or PII.",
+          "constraints": {"required": true, "minLength": 1}
+        },
+        {
+          "name": "measurement",
+          "type": "string",
+          "description": "Physical or economic quantity being measured.",
+          "constraints": {
+            "required": true,
+            "enum": [
+              "active_power", "reactive_power", "apparent_power",
+              "voltage", "current", "frequency", "power_factor",
+              "energy", "temperature",
+              "price", "price_forecast",
+              "soc", "irradiance", "wind_speed", "other"
+            ]
+          }
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "description": "Numeric measurement value.",
+          "constraints": {"required": true}
+        },
+        {
+          "name": "unit",
+          "type": "string",
+          "description": "Unit of measurement (UCUM-aligned).",
+          "constraints": {
+            "required": true,
+            "enum": [
+              "W", "kW", "MW", "GW",
+              "VAR", "kVAR", "MVAR",
+              "VA", "kVA", "MVA",
+              "Wh", "kWh", "MWh", "GWh",
+              "V", "kV",
+              "A", "kA",
+              "Hz",
+              "USD/MWh", "USD/kWh", "EUR/MWh",
+              "Cel",
+              "W/m2",
+              "m/s",
+              "pct",
+              "pu",
+              "dimensionless"
+            ]
+          }
+        },
+        {
+          "name": "quality_flag",
+          "type": "string",
+          "description": "Data quality or provenance indicator.",
+          "constraints": {
+            "required": true,
+            "enum": ["measured", "estimated", "imputed", "simulated", "redacted", "unknown"]
+          }
+        },
+        {
+          "name": "source",
+          "type": "string",
+          "description": "Origin of the data.",
+          "constraints": {
+            "required": true,
+            "enum": ["sensor", "sim", "market", "derived", "manual", "other"]
+          }
+        }
+      ]
+    }
+  },
+  "eadx:version": "0.1.0",
+  "eadx:mappings": {
+    "cim_61968": "UsagePoint.readings / MeterReading.IntervalReadings",
+    "green_button_espi": "UsagePoint/meterReading/IntervalBlock/IntervalReading",
+    "edi_867": "867 meter usage transaction set (ANSI X12)"
+  }
+}

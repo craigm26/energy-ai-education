@@ -1,0 +1,42 @@
+name: Content improvement
+description: Suggest an improvement to docs, tutorials, notebooks, or dataset cards
+labels: ["content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for improving our educational content! Please complete this form.
+        **Do not include operationally sensitive infrastructure data.**
+  - type: dropdown
+    id: content-type
+    attributes:
+      label: Content type
+      options: [Tutorial/notebook, Concept doc, Case study, Dataset card, Benchmark, EA-DX spec, Mapping guide, Other]
+    validations:
+      required: true
+  - type: dropdown
+    id: audience-level
+    attributes:
+      label: Audience level
+      options: [Foundations, Applied, Advanced, All]
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What needs improvement?
+      placeholder: Describe the issue or gap in the current content.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: Proposed change
+      placeholder: What should be added, changed, or removed?
+  - type: checkboxes
+    id: sensitive-data
+    attributes:
+      label: Sensitive data check
+      options:
+        - label: This contribution does NOT contain operationally sensitive infrastructure details, customer PII, or CEII.
+          required: true

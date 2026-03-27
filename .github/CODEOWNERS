@@ -1,0 +1,16 @@
+# CODEOWNERS — auto-assign reviewers by path
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global fallback — all changes require a maintainer review
+*                           @craigm26
+
+# EA-DX spec and schemas — schema owner review required
+/standards/eadx/            @craigm26
+/src/eadx/                  @craigm26
+
+# Benchmark harness
+/benchmarks/harness/        @craigm26
+
+# CI and governance
+/.github/                   @craigm26
+/governance/                @craigm26

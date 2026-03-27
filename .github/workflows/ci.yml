@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Lint (ruff)
+        run: |
+          ruff format --check src/ benchmarks/
+          ruff check src/ benchmarks/ --select E,F,W,I --ignore E501
+
+      - name: Type check (mypy)
+        run: mypy src/ --ignore-missing-imports
+        continue-on-error: true  # non-blocking until type coverage improves
+
+      - name: Unit tests
+        run: pytest src/ -q --tb=short -m "not slow"
+
+      - name: EA-DX schema validation
+        run: python -m eadx validate datasets/index/ || true  # warn only until populated
+
+      - name: Notebook smoke tests
+        run: |
+          if ls notebooks/**/*.ipynb 2>/dev/null | head -1 | grep -q '.ipynb'; then
+            pytest --nbval notebooks/ -m smoke -q --tb=short
+          else
+            echo "No notebooks to test yet — skipping"
+          fi
+
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high
+          deny-licenses: GPL-3.0, AGPL-3.0

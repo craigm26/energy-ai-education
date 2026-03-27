@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this repository in your research or educational work, please cite it as below."
+type: software
+title: "Energy AI Education Hub"
+abstract: >
+  A curated, reproducible collection of ML/AI educational materials for the energy industry,
+  including the EA-DX Package interchange format for energy ML data.
+authors:
+  - family-names: Merry
+    given-names: Craig
+    orcid: ""
+    affiliation: ""
+repository-code: "https://github.com/craigm26/energy-ai-education"
+url: "https://github.com/craigm26/energy-ai-education"
+license: Apache-2.0
+version: "0.1.0"
+date-released: "2026-03-27"
+keywords:
+  - energy
+  - machine learning
+  - artificial intelligence
+  - power systems
+  - forecasting
+  - anomaly detection
+  - interoperability
+  - open data
+  - education
+  - EA-DX

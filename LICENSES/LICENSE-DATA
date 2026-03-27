@@ -1,0 +1,12 @@
+Creative Commons Zero v1.0 Universal (CC0 1.0) — default for datasets
+
+Copyright 2026 Craig Merry
+
+To the extent possible under law, the author(s) have dedicated all copyright and
+related and neighboring rights to this software to the public domain worldwide.
+This software is distributed without any warranty.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Scope: This is the DEFAULT license for dataset packages (datasets/) unless a
+dataset card explicitly declares a different license (ODC-By, ODbL, etc.).
+Always check the individual dataset card for the applicable license before use.

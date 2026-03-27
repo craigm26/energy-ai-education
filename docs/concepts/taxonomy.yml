@@ -1,0 +1,72 @@
+# Energy AI Education Hub — controlled vocabulary
+# Used to tag tutorials, notebooks, datasets, and benchmarks.
+# Update this file and run `pytest` to validate consistency.
+
+domains:
+  - id: generation
+    label: Generation
+    description: Power plants, generators, renewable energy sources
+  - id: transmission
+    label: Transmission
+    description: High-voltage transmission grids, congestion, scheduling
+  - id: distribution
+    label: Distribution
+    description: Distribution networks, feeders, meters, DER integration
+  - id: markets
+    label: Markets
+    description: Wholesale electricity markets, prices, dispatch, ancillary services
+  - id: customer
+    label: Customer
+    description: Retail energy, demand-side management, customer analytics
+  - id: der
+    label: DER
+    description: Distributed energy resources — solar, wind, storage, EVs
+  - id: cross-domain
+    label: Cross-domain
+    description: Topics spanning multiple domains
+
+tasks:
+  - id: forecasting
+    label: Forecasting
+    description: Predicting future values (load, price, generation, volatility)
+  - id: anomaly-detection
+    label: Anomaly Detection
+    description: Identifying unusual patterns in sensor, meter, or market data
+  - id: optimization
+    label: Optimization
+    description: Scheduling, dispatch, topology optimization
+  - id: rl
+    label: Reinforcement Learning
+    description: Sequential decision-making in grid or market environments
+  - id: classification
+    label: Classification
+    description: Fault type detection, event classification
+  - id: eda
+    label: Exploratory Data Analysis
+    description: Data exploration, visualization, feature engineering
+  - id: governance
+    label: Model Governance
+    description: Model cards, datasheets, responsible AI, AI RMF alignment
+
+maturity_levels:
+  - id: foundations
+    label: Foundations
+    description: Minimal prerequisites; introduces domain and ML concepts together
+  - id: applied
+    label: Applied
+    description: Assumes basic ML knowledge; focuses on practical energy ML workflows
+  - id: advanced
+    label: Advanced
+    description: Research-grade; assumes strong ML background and domain familiarity
+
+data_types:
+  - id: time-series
+    label: Time Series
+  - id: topology
+    label: Network Topology
+  - id: tabular
+    label: Tabular (non-temporal)
+  - id: text
+    label: Text (reports, logs, documentation)
+  - id: synthetic
+    label: Synthetic / Simulated

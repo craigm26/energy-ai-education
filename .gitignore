@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data (large files go in datasets/ as pointers, not raw data)
+*.parquet
+*.h5
+*.hdf5
+*.feather
+*.pkl
+datasets/**/*.csv
+!datasets/**/TEMPLATE.csv
+
+# Test / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Docs build
+site/
+_build/
+
+# OS
+.DS_Store
+Thumbs.db
