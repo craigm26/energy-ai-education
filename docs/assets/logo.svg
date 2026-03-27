@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Grid arc — energy network -->
+  <circle cx="32" cy="32" r="26" stroke="#00897B" stroke-width="3" fill="none" stroke-dasharray="6 3" opacity="0.4"/>
+  <!-- Lightning bolt — energy / power -->
+  <path d="M36 10 L22 34 L31 34 L28 54 L44 28 L34 28 Z" fill="#00BFA5" opacity="0.9"/>
+  <!-- Neural node dots -->
+  <circle cx="18" cy="20" r="3.5" fill="#26A69A"/>
+  <circle cx="46" cy="20" r="3.5" fill="#26A69A"/>
+  <circle cx="14" cy="44" r="3.5" fill="#26A69A"/>
+  <circle cx="50" cy="44" r="3.5" fill="#26A69A"/>
+  <!-- Connecting lines -->
+  <line x1="18" y1="20" x2="30" y2="28" stroke="#4DB6AC" stroke-width="1.5" opacity="0.6"/>
+  <line x1="46" y1="20" x2="34" y2="28" stroke="#4DB6AC" stroke-width="1.5" opacity="0.6"/>
+  <line x1="14" y1="44" x2="28" y2="36" stroke="#4DB6AC" stroke-width="1.5" opacity="0.6"/>
+  <line x1="50" y1="44" x2="36" y2="36" stroke="#4DB6AC" stroke-width="1.5" opacity="0.6"/>
+</svg>

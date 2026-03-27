@@ -1,0 +1,89 @@
+site_name: Energy AI Education Hub
+site_description: "Curated ML/AI learning materials for the energy sector — with EA-DX, an open data interchange format for energy ML."
+site_url: https://craigm26.github.io/energy-ai-education/
+repo_url: https://github.com/craigm26/energy-ai-education
+repo_name: craigm26/energy-ai-education
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+  icon:
+    repo: fontawesome/brands/github
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/craigm26/energy-ai-education
+  analytics:
+    provider: custom
+
+nav:
+  - Home: index.md
+  - Learning Paths:
+    - Overview: learning-paths/overview.md
+    - Foundations: learning-paths/foundations.md
+    - Applied: learning-paths/applied.md
+    - Advanced: learning-paths/advanced.md
+  - EA-DX Format:
+    - Introduction: eadx/index.md
+    - Observations schema: eadx/observations.md
+    - Standard mappings: eadx/mappings.md
+  - Datasets:
+    - Curated registry: datasets/index.md
+    - Dataset card template: datasets/template.md
+  - Benchmarks:
+    - Overview: benchmarks/index.md
+    - Load forecasting (day-ahead): benchmarks/load-forecasting-dayahead.md
+  - Contributing: contributing.md
