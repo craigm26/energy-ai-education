@@ -53,7 +53,7 @@ notebooks = [
     "seaborn>=0.13",
     "scikit-learn>=1.4",
     "statsmodels>=0.14",
-    "plotly>=5.0",
+    "plotly>=6.7.0",
 ]
 
 [project.scripts]
