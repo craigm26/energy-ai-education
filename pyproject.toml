@@ -43,7 +43,7 @@ dev = [
     "statsmodels>=0.14",
 ]
 docs = [
-    "mkdocs>=1.6",
+    "mkdocs>=1.6.1",
     "mkdocs-material>=9.5",
     "mkdocs-material-extensions>=1.3",
 ]
